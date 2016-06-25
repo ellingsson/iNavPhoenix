@@ -1,17 +1,28 @@
-Entering CLI Mode, type 'exit' to return, or 'help'
-
 # dump
 
 # version
-# INAV/NAZE 1.1.0 May 11 2016 / 02:37:17 (1f49891)
+# INAV/NAZE 1.1.0 Jun 24 2016 / 14:58:03 (a8a9ba8)
 # pflags
-# Persistent config flags: 0x00000000
+# Persistent config flags: 0x00000001
 # dump master
 
 # mixer
 mixer CUSTOMAIRPLANE
 mmix reset
+mmix 0 1.000 0.000 0.000 0.000
 smix reset
+smix 0 2 0 100 0 0 50 0
+smix 1 2 0 50 0 50 100 0
+smix 2 3 0 50 0 0 50 0
+smix 3 3 0 100 0 50 100 0
+smix 4 4 1 100 0 0 100 0
+smix 5 5 2 100 0 0 100 0
+smix 6 2 8 100 0 0 10 0
+smix 7 2 8 -100 0 90 91 0
+smix 8 3 8 -100 0 90 100 0
+smix 9 3 8 100 0 9 10 0
+smix 10 2 8 -75 0 0 50 1
+smix 11 3 8 75 0 50 100 1
 
 
 # feature
@@ -38,8 +49,11 @@ feature -BLACKBOX
 feature -CHANNEL_FORWARDING
 feature RX_PPM
 feature VBAT
+feature MOTOR_STOP
 feature SOFTSERIAL
+feature GPS
 feature FAILSAFE
+feature TELEMETRY
 
 
 # beeper
@@ -69,9 +83,9 @@ map AETR1234
 
 # serial
 serial 0 1 115200 38400 0 115200
-serial 1 0 115200 38400 0 115200
+serial 1 2 115200 38400 0 115200
 serial 30 0 115200 38400 0 115200
-serial 31 0 115200 38400 0 115200
+serial 31 1 9600 38400 0 115200
 
 
 # led
@@ -140,8 +154,8 @@ set rssi_scale = 30
 set rssi_ppm_invert = OFF
 set rc_smoothing = ON
 set input_filtering_mode = OFF
-set min_throttle = 1150
-set max_throttle = 1850
+set min_throttle = 1000
+set max_throttle = 2000
 set min_command = 1000
 set servo_center_pulse = 1500
 set 3d_deadband_low = 1406
@@ -150,12 +164,12 @@ set 3d_neutral = 1460
 set 3d_deadband_throttle = 1000
 set motor_pwm_rate = 400
 set servo_pwm_rate = 50
-set disarm_kill_switch = ON
+set disarm_kill_switch = OFF
 set auto_disarm_delay = 5
-set small_angle = 25
+set small_angle = 45
 set reboot_character = 82
 set gps_provider = UBLOX
-set gps_sbas_mode = AUTO
+set gps_sbas_mode = EGNOS
 set gps_dyn_model = AIR_1G
 set gps_auto_config = ON
 set gps_auto_baud = ON
@@ -241,13 +255,13 @@ set yaw_jump_prevention_limit = 200
 set tri_unarmed_servo = ON
 set servo_lowpass_freq = 400
 set servo_lowpass_enable = OFF
-set failsafe_delay = 10
+set failsafe_delay = 100
 set failsafe_off_delay = 200
 set failsafe_throttle = 1000
 set failsafe_kill_switch = OFF
-set failsafe_throttle_low_delay = 100
+set failsafe_throttle_low_delay = 300
 set failsafe_procedure = SET-THR
-set rx_min_usec = 885
+set rx_min_usec = 900
 set rx_max_usec = 2115
 set acc_hardware = 0
 set baro_use_median_filter = ON
@@ -272,8 +286,8 @@ rxfail 1 a
 rxfail 2 a
 rxfail 3 a
 rxfail 4 h
-rxfail 5 h
-rxfail 6 h
+rxfail 5 s 2000
+rxfail 6 s 1500
 rxfail 7 h
 rxfail 8 h
 rxfail 9 h
@@ -292,16 +306,16 @@ rxfail 17 h
 profile 0
 
 # aux
-aux 0 0 0 900 900
-aux 1 0 0 900 900
-aux 2 0 0 900 900
-aux 3 0 0 900 900
-aux 4 0 0 900 900
-aux 5 0 0 900 900
-aux 6 0 0 900 900
-aux 7 0 0 900 900
-aux 8 0 0 900 900
-aux 9 0 0 900 900
+aux 0 0 1 1050 2100
+aux 1 1 1 1575 2100
+aux 2 25 1 1300 2100
+aux 3 10 1 1725 1800
+aux 4 9 1 1950 2100
+aux 5 24 1 1850 1925
+aux 6 11 1 900 1300
+aux 7 19 1 1200 1300
+aux 8 19 1 1450 1550
+aux 9 3 1 1725 2100
 aux 10 0 0 900 900
 aux 11 0 0 900 900
 aux 12 0 0 900 900
@@ -336,8 +350,8 @@ rxrange 3 1000 2000
 # servo
 servo 0 1000 2000 1500 90 90 100 -1
 servo 1 1000 2000 1500 90 90 100 -1
-servo 2 1000 2000 1500 90 90 100 -1
-servo 3 1000 2000 1500 90 90 100 -1
+servo 2 1000 2000 1400 90 90 100 -1
+servo 3 1000 2000 1410 90 90 100 -1
 servo 4 1000 2000 1500 90 90 100 -1
 servo 5 1000 2000 1500 90 90 100 -1
 servo 6 1000 2000 1500 90 90 100 -1
@@ -363,7 +377,7 @@ set yaw_deadband = 5
 set throttle_tilt_comp_str = 0
 set default_rate_profile = 0
 set gimbal_mode = NORMAL
-set mag_declination = 0
+set mag_declination = 260
 set p_pitch = 30
 set i_pitch = 20
 set d_pitch = 70
@@ -401,4 +415,3 @@ set tpa_rate = 0
 set tpa_breakpoint = 1500
 
 # 
-

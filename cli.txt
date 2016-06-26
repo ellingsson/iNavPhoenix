@@ -3,7 +3,7 @@
 # version
 # INAV/NAZE 1.1.0 Jun 24 2016 / 14:58:03 (a8a9ba8)
 # pflags
-# Persistent config flags: 0x00000000
+# Persistent config flags: 0x00000001
 # dump master
 
 # mixer
@@ -52,7 +52,6 @@ feature VBAT
 feature MOTOR_STOP
 feature SOFTSERIAL
 feature GPS
-feature FAILSAFE
 feature TELEMETRY
 
 
@@ -259,7 +258,7 @@ set failsafe_delay = 100
 set failsafe_off_delay = 200
 set failsafe_throttle = 1000
 set failsafe_kill_switch = OFF
-set failsafe_throttle_low_delay = 100
+set failsafe_throttle_low_delay = 1000
 set failsafe_procedure = SET-THR
 set rx_min_usec = 900
 set rx_max_usec = 2115
@@ -270,15 +269,15 @@ set mag_hardware = 0
 set blackbox_rate_num = 1
 set blackbox_rate_denom = 1
 set blackbox_device = SERIAL
-set magzero_x = 0
-set magzero_y = 0
-set magzero_z = 0
-set acczero_x = 0
-set acczero_y = 0
-set acczero_z = 0
-set accgain_x = 4096
-set accgain_y = 4096
-set accgain_z = 4096
+set magzero_x = 116
+set magzero_y = -137
+set magzero_z = 14
+set acczero_x = 30
+set acczero_y = -12
+set acczero_z = 36
+set accgain_x = 4085
+set accgain_y = 4080
+set accgain_z = 4061
 
 # rxfail
 rxfail 0 a

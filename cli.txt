@@ -83,7 +83,7 @@ map AETR1234
 # serial
 serial 0 1 115200 38400 0 115200
 serial 1 2 115200 38400 0 115200
-serial 30 0 115200 38400 0 115200
+serial 30 4 115200 38400 0 115200
 serial 31 1 9600 38400 0 115200
 
 
@@ -153,8 +153,8 @@ set rssi_scale = 30
 set rssi_ppm_invert = OFF
 set rc_smoothing = ON
 set input_filtering_mode = OFF
-set min_throttle = 1150
-set max_throttle = 2000
+set min_throttle = 1025
+set max_throttle = 1850
 set min_command = 1000
 set servo_center_pulse = 1500
 set 3d_deadband_low = 1406
@@ -202,23 +202,23 @@ set nav_emerg_landing_speed = 500
 set nav_min_rth_distance = 500
 set nav_rth_tail_first = OFF
 set nav_rth_alt_mode = AT_LEAST
-set nav_rth_altitude = 1000
+set nav_rth_altitude = 5000
 set nav_mc_bank_angle = 30
 set nav_mc_hover_thr = 1500
 set nav_mc_min_fly_thr = 1200
 set nav_fw_cruise_thr = 1400
-set nav_fw_min_thr = 1200
+set nav_fw_min_thr = 1300
 set nav_fw_max_thr = 1700
-set nav_fw_bank_angle = 20
-set nav_fw_climb_angle = 20
+set nav_fw_bank_angle = 40
+set nav_fw_climb_angle = 15
 set nav_fw_dive_angle = 15
-set nav_fw_pitch2thr = 10
-set nav_fw_roll2pitch = 75
+set nav_fw_pitch2thr = 20
+set nav_fw_roll2pitch = 50
 set nav_fw_loiter_radius = 5000
 set serialrx_provider = SPEK1024
 set spektrum_sat_bind = 0
 set telemetry_switch = OFF
-set telemetry_inversion = OFF
+set telemetry_inversion = ON
 set frsky_default_lattitude =  0.000
 set frsky_default_longitude =  0.000
 set frsky_coordinates_format = 0
@@ -286,7 +286,7 @@ rxfail 2 a
 rxfail 3 a
 rxfail 4 h
 rxfail 5 s 2000
-rxfail 6 s 1500
+rxfail 6 h
 rxfail 7 h
 rxfail 8 h
 rxfail 9 h
@@ -308,13 +308,13 @@ profile 0
 aux 0 0 1 1050 2100
 aux 1 1 1 1575 2100
 aux 2 25 1 1300 2100
-aux 3 10 1 1725 1800
-aux 4 9 1 1950 2100
-aux 5 24 1 1850 1925
-aux 6 11 1 900 1300
-aux 7 19 1 1200 1300
-aux 8 19 1 1450 1550
-aux 9 3 1 1725 2100
+aux 3 3 1 1725 2100
+aux 4 10 1 1725 2100
+aux 5 9 1 1950 2100
+aux 6 24 1 1850 1925
+aux 7 11 1 900 1300
+aux 8 19 1 1200 1300
+aux 9 19 1 1450 1550
 aux 10 0 0 900 900
 aux 11 0 0 900 900
 aux 12 0 0 900 900
@@ -366,30 +366,30 @@ set nav_pos_p = 65
 set nav_pos_i = 120
 set nav_pos_d = 10
 set nav_posr_p = 180
-set nav_posr_i = 15
+set nav_posr_i = 150
 set nav_posr_d = 100
-set nav_navr_p = 10
-set nav_navr_i = 5
-set nav_navr_d = 8
+set nav_navr_p = 200
+set nav_navr_i = 10
+set nav_navr_d = 0
 set deadband = 5
 set yaw_deadband = 5
 set throttle_tilt_comp_str = 0
 set default_rate_profile = 0
 set gimbal_mode = NORMAL
 set mag_declination = 260
-set p_pitch = 30
-set i_pitch = 20
-set d_pitch = 70
-set p_roll = 30
-set i_roll = 20
-set d_roll = 70
+set p_pitch = 100
+set i_pitch = 10
+set d_pitch = 40
+set p_roll = 100
+set i_roll = 10
+set d_roll = 40
 set p_yaw = 100
-set i_yaw = 40
-set d_yaw = 0
-set p_level = 120
-set i_level = 15
+set i_yaw = 0
+set d_yaw = 20
+set p_level = 160
+set i_level = 10
 set d_level = 75
-set max_angle_inclination_rll = 300
+set max_angle_inclination_rll = 400
 set max_angle_inclination_pit = 300
 set gyro_soft_lpf_hz = 60
 set acc_soft_lpf_hz = 15
@@ -407,9 +407,9 @@ set rc_expo = 70
 set rc_yaw_expo = 20
 set thr_mid = 50
 set thr_expo = 0
-set roll_rate = 0
-set pitch_rate = 0
-set yaw_rate = 0
+set roll_rate = 5
+set pitch_rate = 5
+set yaw_rate = 5
 set tpa_rate = 0
 set tpa_breakpoint = 1500
 

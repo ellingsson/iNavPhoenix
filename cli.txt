@@ -1,7 +1,7 @@
 # dump
 
 # version
-# INAV/NAZE 1.1.0 Jun 24 2016 / 14:58:03 (a8a9ba8)
+# INAV/NAZE 1.1.0 Jun 27 2016 / 23:57:41 (a8a9ba8)
 # pflags
 # Persistent config flags: 0x00000001
 # dump master
@@ -53,6 +53,7 @@ feature MOTOR_STOP
 feature SOFTSERIAL
 feature GPS
 feature TELEMETRY
+feature CURRENT_METER
 
 
 # beeper
@@ -230,8 +231,8 @@ set vbat_scale = 110
 set vbat_max_cell_voltage = 43
 set vbat_min_cell_voltage = 33
 set vbat_warning_cell_voltage = 35
-set current_meter_scale = 400
-set current_meter_offset = 0
+set current_meter_scale = 570
+set current_meter_offset = 5
 set multiwii_current_meter_output = OFF
 set current_meter_type = ADC
 set align_gyro = DEFAULT

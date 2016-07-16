@@ -7,7 +7,7 @@
 # dump master
 
 # mixer
-mixer QUADX
+mixer AIRPLANE
 mmix reset
 smix reset
 
@@ -36,9 +36,12 @@ feature -BLACKBOX
 feature -CHANNEL_FORWARDING
 feature -RX_NRF24
 feature -SOFTSPI
+feature RX_PPM
 feature VBAT
-feature FAILSAFE
-feature RX_PARALLEL_PWM
+feature MOTOR_STOP
+feature SOFTSERIAL
+feature TELEMETRY
+feature CURRENT_METER
 
 
 # beeper
@@ -69,6 +72,8 @@ map AETR1234
 # serial
 serial 0 1 115200 38400 0 115200
 serial 1 0 115200 38400 0 115200
+serial 30 0 115200 38400 0 115200
+serial 31 0 115200 38400 0 115200
 
 
 # led
@@ -144,15 +149,15 @@ set servo_center_pulse = 1500
 set 3d_deadband_low = 1406
 set 3d_deadband_high = 1514
 set 3d_neutral = 1460
-set 3d_deadband_throttle = 50
+set 3d_deadband_throttle = 1000
 set motor_pwm_rate = 400
 set servo_pwm_rate = 50
-set disarm_kill_switch = ON
-set auto_disarm_delay = 5
+set disarm_kill_switch = OFF
+set auto_disarm_delay = 0
 set small_angle = 25
 set reboot_character = 82
 set gps_provider = UBLOX
-set gps_sbas_mode = NONE
+set gps_sbas_mode = EGNOS
 set gps_dyn_model = AIR_1G
 set gps_auto_config = ON
 set gps_auto_baud = ON

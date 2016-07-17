@@ -3,7 +3,7 @@
 # version
 # INAV/NAZE 1.2.0 Jul 16 2016 / 15:54:58 (45fc7a6)
 # pflags
-# Persistent config flags: 0x00000000
+# Persistent config flags: 0x00000001
 # dump master
 
 # mixer
@@ -257,15 +257,15 @@ set mag_hardware = 0
 set blackbox_rate_num = 1
 set blackbox_rate_denom = 1
 set blackbox_device = SERIAL
-set magzero_x = 0
-set magzero_y = 0
-set magzero_z = 0
-set acczero_x = 0
-set acczero_y = 0
-set acczero_z = 0
-set accgain_x = 4096
-set accgain_y = 4096
-set accgain_z = 4096
+set magzero_x = 22
+set magzero_y = -9
+set magzero_z = 4
+set acczero_x = 28
+set acczero_y = -49
+set acczero_z = 43
+set accgain_x = 4087
+set accgain_y = 4085
+set accgain_z = 4090
 
 # rxfail
 rxfail 0 a

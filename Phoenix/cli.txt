@@ -84,7 +84,7 @@ map AETR1234
 # serial
 serial 0 1 115200 38400 0 115200
 serial 1 2 115200 38400 0 115200
-serial 30 4 115200 38400 0 115200
+serial 30 0 115200 38400 0 115200
 serial 31 1 9600 38400 0 115200
 
 
@@ -149,7 +149,7 @@ set gyro_sync_denom = 2
 set mid_rc = 1502
 set min_check = 1100
 set max_check = 1900
-set rssi_channel = 0
+set rssi_channel = 9
 set rssi_scale = 30
 set rssi_ppm_invert = OFF
 set rc_smoothing = ON
@@ -238,8 +238,8 @@ set current_meter_type = ADC
 set align_gyro = DEFAULT
 set align_acc = DEFAULT
 set align_mag = DEFAULT
-set align_board_roll = -31
-set align_board_pitch = -45
+set align_board_roll = -2
+set align_board_pitch = -73
 set align_board_yaw = 0
 set gyro_lpf = 42HZ
 set moron_threshold = 32

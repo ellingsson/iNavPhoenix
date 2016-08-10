@@ -13,6 +13,8 @@ mmix 0 1.000 0.000 0.000 0.000
 smix reset
 smix 0 2 0 100 0 0 100 0
 smix 1 3 1 100 0 0 100 0
+smix 2 4 10 100 0 0 100 0
+smix 3 5 11 100 0 0 100 0
 
 
 # feature
@@ -73,7 +75,7 @@ map AETR1234
 # serial
 serial 0 1 115200 38400 0 115200
 serial 1 2 115200 38400 0 115200
-serial 30 0 115200 38400 0 115200
+serial 30 1 9600 38400 0 115200
 serial 31 4 115200 38400 0 115200
 
 
@@ -160,7 +162,7 @@ set reboot_character = 82
 set gps_provider = UBLOX
 set gps_sbas_mode = EGNOS
 set gps_dyn_model = AIR_1G
-set gps_auto_config = ON
+set gps_auto_config = OFF
 set gps_auto_baud = ON
 set inav_accz_unarmedcal = ON
 set inav_use_gps_velned = ON
@@ -196,8 +198,8 @@ set nav_rth_altitude = 5000
 set nav_mc_bank_angle = 30
 set nav_mc_hover_thr = 1500
 set nav_mc_min_fly_thr = 1200
-set nav_fw_cruise_thr = 1400
-set nav_fw_min_thr = 1400
+set nav_fw_cruise_thr = 1500
+set nav_fw_min_thr = 1700
 set nav_fw_max_thr = 1900
 set nav_fw_bank_angle = 25
 set nav_fw_climb_angle = 15
@@ -227,8 +229,8 @@ set current_meter_type = ADC
 set align_gyro = DEFAULT
 set align_acc = DEFAULT
 set align_mag = DEFAULT
-set align_board_roll = 0
-set align_board_pitch = 0
+set align_board_roll = -11
+set align_board_pitch = 3
 set align_board_yaw = 0
 set gyro_lpf = 42HZ
 set moron_threshold = 32
@@ -297,14 +299,14 @@ profile 0
 # aux
 aux 0 0 1 1050 2100
 aux 1 1 1 1575 2100
-aux 2 25 1 1300 2100
-aux 3 3 1 1725 2100
-aux 4 10 1 1725 2100
-aux 5 9 1 1950 2100
-aux 6 24 1 1850 1925
-aux 7 11 1 900 1300
-aux 8 19 1 1200 1300
-aux 9 19 1 1450 1550
+aux 2 3 1 1725 2100
+aux 3 10 1 1725 2100
+aux 4 9 1 1950 2100
+aux 5 24 1 1850 1925
+aux 6 11 1 900 1300
+aux 7 19 1 1200 1300
+aux 8 19 1 1450 1550
+aux 9 0 0 900 900
 aux 10 0 0 900 900
 aux 11 0 0 900 900
 aux 12 0 0 900 900
@@ -339,8 +341,8 @@ rxrange 3 1000 2000
 # servo
 servo 0 1000 2000 1500 90 90 100 -1
 servo 1 1000 2000 1500 90 90 100 -1
-servo 2 1042 2042 1542 90 90 100 -1
-servo 3 1041 2041 1541 90 90 100 -1
+servo 2 1100 2100 1600 90 90 100 -1
+servo 3 996 1996 1496 90 90 100 -1
 servo 4 1000 2000 1500 90 90 100 -1
 servo 5 1000 2000 1500 90 90 100 -1
 servo 6 1000 2000 1500 90 90 100 -1
@@ -366,13 +368,13 @@ set yaw_deadband = 5
 set throttle_tilt_comp_str = 0
 set default_rate_profile = 0
 set gimbal_mode = NORMAL
-set mag_declination = 2560
-set p_pitch = 80
+set mag_declination = 260
+set p_pitch = 100
 set i_pitch = 10
-set d_pitch = 40
-set p_roll = 80
+set d_pitch = 5
+set p_roll = 100
 set i_roll = 10
-set d_roll = 40
+set d_roll = 5
 set p_yaw = 100
 set i_yaw = 5
 set d_yaw = 20

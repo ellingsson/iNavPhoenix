@@ -1,7 +1,7 @@
 # dump
 
 # version
-# INAV/NAZE 1.2.0 Aug 10 2016 / 22:16:05 (c65e9c9)
+# INAV/NAZE 1.3.0 Nov  6 2016 / 20:17:18 (479d607)
 # pflags
 # Persistent config flags: 0x00000001
 # dump master
@@ -20,7 +20,7 @@ smix 3 5 11 100 0 0 100 0
 # feature
 feature -RX_PPM
 feature -VBAT
-feature -INFLIGHT_ACC_CAL
+feature -UNUSED_1
 feature -RX_SERIAL
 feature -MOTOR_STOP
 feature -SERVO_TILT
@@ -36,22 +36,24 @@ feature -RX_MSP
 feature -RSSI_ADC
 feature -LED_STRIP
 feature -DISPLAY
-feature -ONESHOT125
+feature -UNUSED_2
 feature -BLACKBOX
 feature -CHANNEL_FORWARDING
 feature -TRANSPONDER
 feature -AIRMODE
 feature -SUPEREXPO
-feature -OSD
 feature -VTX
-feature -RX_NRF24
+feature -RX_SPI
 feature -SOFTSPI
+feature -PWM_SERVO_DRIVER
 feature RX_PPM
 feature VBAT
 feature MOTOR_STOP
 feature SOFTSERIAL
 feature GPS
+feature FAILSAFE
 feature TELEMETRY
+feature CURRENT_METER
 
 
 # beeper
@@ -100,13 +102,13 @@ set input_filtering_mode = OFF
 set min_throttle = 1150
 set max_throttle = 2000
 set min_command = 1000
-set servo_center_pulse = 1500
 set 3d_deadband_low = 1406
 set 3d_deadband_high = 1514
 set 3d_neutral = 1460
-set 3d_deadband_throttle = 1000
+set 3d_deadband_throttle = 50
 set motor_pwm_rate = 400
-set servo_pwm_rate = 50
+set motor_pwm_protocol = STANDARD
+set fixed_wing_auto_arm = OFF
 set disarm_kill_switch = OFF
 set auto_disarm_delay = 0
 set small_angle = 25
@@ -114,7 +116,7 @@ set reboot_character = 82
 set gps_provider = UBLOX
 set gps_sbas_mode = EGNOS
 set gps_dyn_model = AIR_1G
-set gps_auto_config = OFF
+set gps_auto_config = ON
 set gps_auto_baud = ON
 set inav_accz_unarmedcal = ON
 set inav_use_gps_velned = ON
@@ -198,6 +200,8 @@ set yaw_jump_prevention_limit = 200
 set tri_unarmed_servo = ON
 set servo_lowpass_freq = 400
 set servo_lowpass_enable = OFF
+set servo_center_pulse = 1500
+set servo_pwm_rate = 50
 set failsafe_delay = 10
 set failsafe_off_delay = 200
 set failsafe_throttle = 1000
@@ -310,19 +314,20 @@ set nav_pos_p = 65
 set nav_pos_i = 120
 set nav_pos_d = 10
 set nav_posr_p = 180
-set nav_posr_i = 150
+set nav_posr_i = 15
 set nav_posr_d = 100
-set nav_navr_p = 200
-set nav_navr_i = 10
+set nav_navr_p = 10
+set nav_navr_i = 5
 set nav_navr_d = 8
 set deadband = 5
 set yaw_deadband = 5
 set throttle_tilt_comp_str = 0
 set flaperon_throw_offset = 250
 set flaperon_throw_inverted = OFF
+set gimbal_mode = NORMAL
+set fw_iterm_throw_limit = 165
 set mode_range_logic_operator = OR
 set default_rate_profile = 0
-set gimbal_mode = NORMAL
 set mag_declination = 260
 set mag_hold_rate_limit = 90
 set p_pitch = 100

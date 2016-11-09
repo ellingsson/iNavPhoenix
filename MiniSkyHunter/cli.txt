@@ -177,7 +177,7 @@ set vbat_scale = 110
 set vbat_max_cell_voltage = 43
 set vbat_min_cell_voltage = 33
 set vbat_warning_cell_voltage = 35
-set current_meter_scale = 400
+set current_meter_scale = 735
 set current_meter_offset = 0
 set multiwii_current_meter_output = OFF
 set current_meter_type = ADC
@@ -369,4 +369,4 @@ set yaw_rate = 20
 set tpa_rate = 0
 set tpa_breakpoint = 1500
 
-# 
+#
